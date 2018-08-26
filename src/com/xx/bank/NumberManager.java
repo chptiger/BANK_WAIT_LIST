@@ -5,7 +5,7 @@ import java.util.List;
 
 public class NumberManager {
 	private int lastNumber = 1;
-	private List<Integer> queueNumber = new ArrayList<Integer>();
+	private List<Integer> queueNumbers = new ArrayList<Integer>();
 
 	/**
 	 * following two method need synchronized.
@@ -16,14 +16,16 @@ public class NumberManager {
 	 */
 //	produce service number when customer come in bank 
 	public synchronized Integer generateNewManager() {
-		queueNumber.add(lastNumber);
+		queueNumbers.add(lastNumber);
 		return lastNumber++;
 	}
 
 //	service window get current service number 
 	public synchronized Integer fetchServiceNumber() {
-		return queueNumber.remove(0);
+		if(queueNumbers.size() > 0){
+			return (Integer)queueNumbers.remove(0);
+		}else{
+			return null;
+		}
 	}
-	
-	
 }

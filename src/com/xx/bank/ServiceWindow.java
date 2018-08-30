@@ -41,9 +41,10 @@ public class ServiceWindow {
 
 	private void commonService() {
 		String windowName = "The " + windowId + " " + type + " service window ";
-		System.out.println("try to get task......");
-		Integer number = NumberMachine.getInstance().getCommonManager().fetchServiceNumber();
-		if (number != null) {
+		System.out.println(windowName + "tries to get task......");
+		Integer serviceNumber = NumberMachine.getInstance().getCommonManager().fetchServiceNumber();
+		if (serviceNumber != null) {
+			System.out.println(windowName + "is working for " + serviceNumber);
 			long beginTime = System.currentTimeMillis();
 			int maxRandom = Constants.MAX_SERVICE_TIME - Constants.MIN_SERVICE_TIME;
 			long serverTime = new Random().nextInt(maxRandom) + 1 + Constants.MIN_SERVICE_TIME;
@@ -54,9 +55,9 @@ public class ServiceWindow {
 			}
 			long workTime = System.currentTimeMillis() - beginTime;
 			System.out.println(
-					windowName + " spend " + workTime / 1000 + " secondes to service the " + number + "th customer");
+					windowName + " spends " + workTime / 1000 + " secondes to service the " + serviceNumber + "th customer");
 		} else {
-			System.out.println("did not find task, waitting 1 second");
+			System.out.println(windowName + "did not find task, waitting 1 second");
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
@@ -67,9 +68,10 @@ public class ServiceWindow {
 
 	private void vipService() {
 		String windowName = "The " + windowId + " " + type + " service window ";
-		System.out.println("try to get task......");
-		Integer number = NumberMachine.getInstance().getVipManager().fetchServiceNumber();
-		if (number != null) {
+		System.out.println(windowName + "tries to get task......");
+		Integer serviceNumber = NumberMachine.getInstance().getVipManager().fetchServiceNumber();
+		if (serviceNumber != null) {
+			System.out.println(windowName + "is working for " + serviceNumber);
 			long beginTime = System.currentTimeMillis();
 			int maxRandom = Constants.MAX_SERVICE_TIME - Constants.MIN_SERVICE_TIME;
 			long serverTime = new Random().nextInt(maxRandom) + 1 + Constants.MIN_SERVICE_TIME;
@@ -80,9 +82,9 @@ public class ServiceWindow {
 			}
 			long workTime = System.currentTimeMillis() - beginTime;
 			System.out.println(
-					windowName + " spend " + workTime / 1000 + " secondes to service the " + number + "th customer");
+					windowName + " spends " + workTime / 1000 + " secondes to service the " + serviceNumber + "th customer");
 		} else {
-			System.out.println("did not find task......");
+			System.out.println(windowName + "did not find task......");
 			commonService();
 		}
 
@@ -90,9 +92,10 @@ public class ServiceWindow {
 
 	private void expressService() {
 		String windowName = "The " + windowId + " " + type + " service window ";
-		System.out.println("try to get task......");
-		Integer number = NumberMachine.getInstance().getExpressManager().fetchServiceNumber();
-		if (number != null) {
+		System.out.println(windowName + "tries to get task......");
+		Integer serviceNumber = NumberMachine.getInstance().getExpressManager().fetchServiceNumber();
+		if (serviceNumber != null) {
+			System.out.println(windowName + "is working for " + serviceNumber);
 			long beginTime = System.currentTimeMillis();
 			int maxRandom = Constants.MAX_SERVICE_TIME - Constants.MIN_SERVICE_TIME;
 			long serverTime = new Random().nextInt(maxRandom) + 1 + Constants.MIN_SERVICE_TIME;
@@ -103,9 +106,9 @@ public class ServiceWindow {
 			}
 			long workTime = System.currentTimeMillis() - beginTime;
 			System.out.println(
-					windowName + " spend " + workTime / 1000 + " secondes to service the " + number + "th customer");
+					windowName + " spends " + workTime / 1000 + " secondes to service the " + serviceNumber + "th customer");
 		} else {
-			System.out.println("did not find task......");
+			System.out.println(windowName + "did not find task......");
 			commonService();
 		}
 

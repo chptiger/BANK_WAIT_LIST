@@ -15,7 +15,7 @@ public class NumberManager {
 	 * @return
 	 */
 //	produce service number when customer come in bank 
-	public synchronized Integer generateNewManager() {
+	public synchronized Integer generateNewNumber() {
 		queueNumbers.add(lastNumber);
 		return lastNumber++;
 	}

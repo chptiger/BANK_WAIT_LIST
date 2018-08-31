@@ -2,9 +2,9 @@ package com.xx.bank;
 
 public enum CustomerType {
 	COMMON, EXPRESS, VIP;
-	public String toString(){
+	public String toString() {
 		String name = null;
-		switch(this){
+		switch (this) {
 		case COMMON:
 			name = "COMMON";
 			break;

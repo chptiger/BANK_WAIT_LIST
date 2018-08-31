@@ -2,8 +2,10 @@ package com.xx.bank;
 
 import java.util.Random;
 import java.util.concurrent.Executors;
+import java.util.logging.Logger;
 
 public class ServiceWindow {
+	private static Logger logger = Logger.getLogger("com.xx.bank");
 	private CustomerType type = CustomerType.COMMON;
 	private int windowId = 1;
 
@@ -35,14 +37,18 @@ public class ServiceWindow {
 		this.type = type;
 	}
 
+	public CustomerType getType() {
+		return type;
+	}
+
 	public void setWindowId(int windowId) {
 		this.windowId = windowId;
 	}
 
 	private void commonService() {
 		String windowName = "# " + windowId + " " + type + " Service Window ";
-		System.out.println(windowName + "tries to get task......");
 		Integer serviceNumber = NumberMachine.getInstance().getCommonManager().fetchServiceNumber();
+		System.out.println(windowName + "tries to get Common Task......");
 		if (serviceNumber != null) {
 			System.out.println(windowName + "is working for " + serviceNumber);
 			long beginTime = System.currentTimeMillis();
@@ -65,13 +71,13 @@ public class ServiceWindow {
 			}
 		}
 	}
-
+// why vip window could service for common customer?
 	private void vipService() {
 		String windowName = "# " + windowId + " " + type + " Service Window ";
-		System.out.println(windowName + "tries to get task......");
 		Integer serviceNumber = NumberMachine.getInstance().getVipManager().fetchServiceNumber();
+		System.out.println(windowName + "tries to get VIP task......");
 		if (serviceNumber != null) {
-			System.out.println(windowName + "is working for " + serviceNumber);
+			System.out.println(windowName + "is working for VIP Task" + serviceNumber);
 			long beginTime = System.currentTimeMillis();
 			int maxRandom = Constants.MAX_SERVICE_TIME - Constants.MIN_SERVICE_TIME;
 			long serverTime = new Random().nextInt(maxRandom) + 1 + Constants.MIN_SERVICE_TIME;
@@ -85,6 +91,7 @@ public class ServiceWindow {
 					windowName + " spends " + workTime / 1000 + " secondes to service the " + serviceNumber + "th customer");
 		} else {
 			System.out.println(windowName + "did not find task......");
+//			Try to service common customer
 			commonService();
 		}
 
@@ -92,10 +99,10 @@ public class ServiceWindow {
 
 	private void expressService() {
 		String windowName = "# " + windowId + " " + type + " Service Window ";
-		System.out.println(windowName + "tries to get task......");
 		Integer serviceNumber = NumberMachine.getInstance().getExpressManager().fetchServiceNumber();
+		System.out.println(windowName + "tries to get Express task......");
 		if (serviceNumber != null) {
-			System.out.println(windowName + "is working for " + serviceNumber);
+			System.out.println(windowName + "is working for Express Task" + serviceNumber);
 			long beginTime = System.currentTimeMillis();
 			int maxRandom = Constants.MAX_SERVICE_TIME - Constants.MIN_SERVICE_TIME;
 			long serverTime = new Random().nextInt(maxRandom) + 1 + Constants.MIN_SERVICE_TIME;
@@ -109,6 +116,7 @@ public class ServiceWindow {
 					windowName + " spends " + workTime / 1000 + " secondes to service the "  + serviceNumber + "th customer");
 		} else {
 			System.out.println(windowName + "did not find task......");
+//			Try to service common customer
 			commonService();
 		}
 

@@ -55,7 +55,7 @@ public class ServiceWindow {
 			}
 			long workTime = System.currentTimeMillis() - beginTime;
 			System.out.println(
-					windowName + " spends " + workTime / 1000 + " secondes to service the "  + type +  serviceNumber + "th customer");
+					windowName + " spends " + workTime / 1000 + " secondes to service the "  + serviceNumber + "th customer");
 		} else {
 			System.out.println(windowName + "did not find task, waitting 1 second");
 			try {
@@ -82,7 +82,7 @@ public class ServiceWindow {
 			}
 			long workTime = System.currentTimeMillis() - beginTime;
 			System.out.println(
-					windowName + " spends " + workTime / 1000 + " secondes to service the " + type + serviceNumber + "th customer");
+					windowName + " spends " + workTime / 1000 + " secondes to service the " + serviceNumber + "th customer");
 		} else {
 			System.out.println(windowName + "did not find task......");
 			commonService();
@@ -106,7 +106,7 @@ public class ServiceWindow {
 			}
 			long workTime = System.currentTimeMillis() - beginTime;
 			System.out.println(
-					windowName + " spends " + workTime / 1000 + " secondes to service the "  + type +  serviceNumber + "th customer");
+					windowName + " spends " + workTime / 1000 + " secondes to service the "  + serviceNumber + "th customer");
 		} else {
 			System.out.println(windowName + "did not find task......");
 			commonService();

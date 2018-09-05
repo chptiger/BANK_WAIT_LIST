@@ -1,6 +1,6 @@
 READ ME:
 
-The code is used to monitor the logic for bank wait list.
+The code is used to simulate the logic for bank wait list.
 
 Requirements:
 
@@ -17,7 +17,7 @@ Requirements:
 3. The rates of different kinds of customers.
 	VIP Customer : Common Customer : Express Customer = 1 : 6 : 2
 
-4. There are Max time and Min time for the agent to complete the customer’s business.
+4. There are Max time and Min time for the agent to complete the customerâ€™s business.
 
 5. Common customer is serviced in the common service window. Express customer is serviced in the express service window. VIP customer is serviced in the VIP window.
 

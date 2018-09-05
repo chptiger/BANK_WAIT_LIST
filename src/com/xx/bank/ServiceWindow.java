@@ -50,7 +50,7 @@ public class ServiceWindow {
 		Integer serviceNumber = NumberMachine.getInstance().getCommonManager().fetchServiceNumber();
 		System.out.println(windowName + "tries to get Common Task......");
 		if (serviceNumber != null) {
-			System.out.println(windowName + "is working for " + serviceNumber);
+			System.out.println(windowName + "is working for Common Task" + serviceNumber);
 			long beginTime = System.currentTimeMillis();
 			int maxRandom = Constants.MAX_SERVICE_TIME - Constants.MIN_SERVICE_TIME;
 			long serverTime = new Random().nextInt(maxRandom) + 1 + Constants.MIN_SERVICE_TIME;
@@ -77,7 +77,7 @@ public class ServiceWindow {
 		Integer serviceNumber = NumberMachine.getInstance().getVipManager().fetchServiceNumber();
 		System.out.println(windowName + "tries to get VIP task......");
 		if (serviceNumber != null) {
-			System.out.println(windowName + "is working for VIP Task" + serviceNumber);
+			System.out.println(windowName + "is working for VIP Task " + serviceNumber);
 			long beginTime = System.currentTimeMillis();
 			int maxRandom = Constants.MAX_SERVICE_TIME - Constants.MIN_SERVICE_TIME;
 			long serverTime = new Random().nextInt(maxRandom) + 1 + Constants.MIN_SERVICE_TIME;

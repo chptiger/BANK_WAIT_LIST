@@ -36,7 +36,7 @@ public class MainClass {
 		Executors.newScheduledThreadPool(1).scheduleAtFixedRate(new Runnable() {
 			public void run() {
 				Integer serviceNumber = NumberMachine.getInstance().getExpressManager().generateNewNumber();
-				System.out.println("The Express Customer # " + serviceNumber + " is waitting for service!");
+				System.out.println("Express Customer # " + serviceNumber + " is waitting for service!");
 			}
 		}, 0, Constants.COMMON_CUSTOMER_INTERVAL_TIME * 2, TimeUnit.SECONDS);
 
@@ -44,7 +44,7 @@ public class MainClass {
 		Executors.newScheduledThreadPool(1).scheduleAtFixedRate(new Runnable() {
 			public void run() {
 				Integer serviceNumber = NumberMachine.getInstance().getVipManager().generateNewNumber();
-				System.out.println("The VIP Customer # " + serviceNumber + " is waitting for service!");
+				System.out.println("VIP Customer # " + serviceNumber + " is waitting for service!");
 			}
 		}, 0, Constants.COMMON_CUSTOMER_INTERVAL_TIME * 6, TimeUnit.SECONDS);
 	}

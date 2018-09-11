@@ -1,6 +1,6 @@
 READ ME:
 
-The code is used to simulate the logic for bank wait list.
+The code is used to simulate the logic for bank waitting list.
 
 Requirements:
 
